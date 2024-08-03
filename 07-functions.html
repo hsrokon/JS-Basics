@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+
+  <script>
+
+// return= gets a value out of a function
+// parameter= puts a value into a function 
+//------------using parameter-------------
+
+function calculateTax (cost){ // this function takes a parameter(this parameter is cost), this function could also take a number
+    console.log(cost*0.1);// here cost is a parameter
+}                         // parameter works same as variable
+                          //parameter only exist inside of a funtion, only can be used inside of a function
+calculateTax(2000);//this is called : calling a function
+calculateTax(4000);//parameter let us put value into a function
+                   //this is passing a value into a function, value is called argument
+
+
+
+function calculateTax1 (cost1, taxPercent=0.1){ // taxPercent is a second parameter, we can take as many parameter as we want in a function
+          // taxpercent=0.1, here 0.1 is a default value, if there is no value
+    console.log(cost1* taxPercent);
+}                         
+calculateTax1(2000, 0.2);
+calculateTax1(5000);
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+</head>
+<body>
+  <button onclick="" class="js-button">Click</button>
+
+  <script>
+
+    //.addEventListener() let's us run some code when we interact with the element just like onclick
+    const buttonElement = document.querySelector('.js-button');
+    const eventListener1 = () => {
+      console.log('click');};
+
+    buttonElement.addEventListener('click', eventListener1); 
+    //first parameter is an event, this will run some code when we click the button. Way to find the event names is to look at the attribute 'onclick' the word after on is the event | second parameter is a function we want to run when we click this element
+
+    buttonElement.removeEventListener ('click', eventListener1);
+
+    buttonElement.addEventListener('click', () => {
+      console.log('click2');
+    }) //multiple listeners can be addes to one one event by addEventListener
+
+
+
+    function greeting () {
+      console.log('hellow');
+    }
+    greeting();// to run the function we need to call the function
+
+    // functions are value
+    const function1 = function () {// anonymous function/without name
+      console.log('hiiiiii');
+    }
+    console.log(function1);
+    console.log(typeof function1);//it's a function
+    function1();
+
+    const object1 = {
+      num: 2,
+      fun : function  (){//anonymous function
+        console.log('heyyyy');
+      }
+    };
+    object1.fun();//here fun is a function
+
+    function display (param) {
+      console.log(param);
+    }
+    display(2);
+
+    //passing a function into another function
+    function run (param) {
+      param();
+    }
+    run(function (){
+      console.log('kaifa haluka?');
+    })
+    
+
+    setTimeout( function (){//it's a built in function
+      console.log('timeout');
+      console.log('timeout2');
+    }, 3000 );
+    // 3000 is a second parameter tells how long to wait before time out(in mili seconds)
+    console.log('next line');// this specific setTimeout function don't wait each line to finish it let's the other codes to run then 3 seconds later it runs timeout
+
+    setInterval (function (){//keeps running the function after a certain period of time
+      console.log('interval');
+    }, 5000);
+    console.log('next line 2');
+    
+
+    [
+      'Make dinner',
+      'Wash dishes',
+      'Watch YouTube'
+    ].forEach(function(value1, index){//forEach will go through each value & save it in parameter value1. it is a preferred way to loop through an array
+      if (value1==='Wash dishes') {
+        return;//it does same thing as continue= it skips that value
+      }
+      console.log(index);
+      console.log(value1);//notice that it runs repeteadly the function by taking 1 value at a time
+    });
+
+    //Shorter way to write functions | Arrow function
+    const regularFunction = function (param, param2){
+      console.log('hellow1');
+      return 5;
+    };
+    regularFunction();
+
+    const arrowFunction = (param, param2) => {
+      console.log('hellow2');
+      return 5;
+    }
+    arrowFunction();
+
+    const oneParam = param1 => {    //in one parameter brackets are optional
+      console.log(param1+1);
+    };
+    oneParam(3);
+
+    const oneLine = () => 5+6 ; //in one line {} brackets are optional
+    console.log(oneLine());
+
+    [
+      'Make dinner again',
+      'Wash dishes again',
+      'Watch YouTube again'
+    ].forEach((value1, index) => {
+      if (value1==='Wash dishes again') {
+        return;
+      }
+      console.log(index);
+      console.log(value1);
+    });
+
+    const object2 = {
+      method1 : () => {
+
+      },
+      method2 () {
+
+      }
+    };
+    //here's 2 way of writing shortcut function in object | method2 is preferable
+
+
+    //filter works same way like forEach
+    console.log ([2, -5, 7].filter((value2, index) => {
+      /* 
+      if (value2 >= 0) {
+        return true;
+      } else {
+        return false;
+      } 
+      */
+     return value2 >= 0;
+    }));
+
+    //map work just like forEach
+    console.log([2, 5, 7].map((value3, index) => {
+      return value3 * 5;
+    }));
+    // forEach, filter, map : these saves the value in the parameter and runs the function again saves the value in the parameter and runs the function
+    //shortcut
+    console.log([2, 5, 7].map(value3 => value3 * 5));
+
+    //Closure
+    /*- if a function has access to a value it'll always have access to that value\
+    -value get's packaged together (enclosed) with the function*/
+  </script>
+  
+</body>
+</html>

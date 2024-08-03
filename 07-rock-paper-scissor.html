@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game with Functions</title>
+  </head>
+
+  <body>
+    <h3>Rock Paper Scissors</h3>
+
+      <button onclick="
+        playGame('rock');
+      ">Rock</button>
+
+      <button  onclick=" 
+        playGame('paper');
+      "> Paper </button>
+
+      <button onclick="
+        playGame('scissors'); //---------1
+      ">Scissors</button>
+
+
+    <script>
+
+    function playGame (playerMove){
+    const computerMove = pickComputerMove(); //-------2
+    // this is called calling the function, without calling it just creates a function,
+    let result='';
+
+    if (playerMove==='scissors'){
+
+        if (computerMove==='Rock') {
+          result='You lose';
+        } else if (computerMove==='Paper'){
+          result='You win';
+        } else if ( computerMove==='Scissors') {
+          result='Tie';
+        }
+
+      } else if (playerMove==='paper'){
+        if (computerMove==='Rock'){
+          result='You Win';
+        } else if (computerMove==='Paper'){
+          result='Tie';
+        } else if (computerMove==='Scissors'){
+          result='You lose';
+        }
+
+      } else if (playerMove==='rock'){
+        if (computerMove === 'Rock') {
+        result ='Tie';
+      } else if (computerMove === 'Paper'){
+        result ='You lose';
+      } else if (computerMove=== 'Scissors'){
+        result='You win';
+      }
+      }
+
+    alert(`You picked ${playerMove}. Computer picked ${computerMove}. (${result})`);   
+    }
+
+      
+      function pickComputerMove () { //-------3
+      const randomNumber = Math.random();
+      let computerMove ='';
+      if (randomNumber>=0 && randomNumber<1/3){
+        computerMove='Rock';
+      } else if (randomNumber>=1/3 && randomNumber<2/3){
+        computerMove='Paper';
+      } else if (randomNumber>=2/3 && randomNumber<1) {
+        computerMove='Scissors'
+      }
+      return computerMove; // this value is passed because of return but won't work if we don't call a function, so we call the function at (2)
+      } 
+
+/* Steps--
+we go to (1), thake 'scisssors' as a parameter value of the function [playGame]--since we called that function we go that funnction with the parameter value--on that function we set the parameter name {playerMove}, so {playerMove}='scissors now'--
+
+on [playGame] function we already called another function [pickComputerMove]-- we go to that function and coming back from it with return value of (computerMove) -- we set that value of (computerMove) with variable ((computerMove))
+
+Now that we've two values to compare, we take {playerMove}='scissors' and run the first if statement-- within that statement (computerMove) takes it's value from [pickComputerMove] function and gives us the final result
+*/
+        
+//return helps to get value outside from a function
+// global variable, a variable that can be used from anywhere from the code
+// however, return variable is preferred over global variable
+
+    </script>
+  </body>
+</html>

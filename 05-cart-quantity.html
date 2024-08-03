@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+
+  <style>
+      .Show-Quantity {
+          background-color: rgb(32, 161, 177);
+          color: aliceblue;
+      }
+      .Add-to-cart {
+          background-color: rgb(39, 149, 192);
+          color: aliceblue;
+      }
+      .Add2 {
+          background-color: rgb(114, 224, 154);
+      }
+      .Add3 {
+          background-color: rgb(19, 191, 76);
+          color: aliceblue;
+      }
+      .Reset {
+          background-color: bisque;
+      }
+  </style>
+
+</head>
+  <body>
+    <h3>Cart Quantity</h3>
+
+        <button class="Show-Quantity" title="Click to see the Amount" onclick="console.log(`Cart Quantity: ${cartQuantity}`)">
+
+          Show Quantity
+        </button>
+        
+        <button class="Add-to-cart" 
+        onclick="cartQuantity++; console.log(`Cart quantity: ${cartQuantity}`);"><!-- cartQuantity=cartQuantity + 2    shortcut is cartQuantity ++;-->
+          Add to Cart
+        </button>
+        
+        <button class="Add2" onclick="cartQuantity+=2; console.log(`Cart quantity: ${cartQuantity}`);">                 <!-- cartQuantity=cartQuantity + 2    shortcut is cartQuantity+=2 or cartQuantity ++;-->
+          +2
+        </button>
+        
+        <button class="Add3" onclick="cartQuantity=cartQuantity + 3; console.log(`Cart quantity: ${cartQuantity}`);">
+          +3
+        </button>
+        
+        <button class="Reset"onclick="cartQuantity=0; console.log(`Cart has been reset. Quantity: ${cartQuantity}`);">
+          Reset Cart
+        </button>
+
+      <script>
+        let cartQuantity =0;
+
+      </script>
+      
+  </body>
+</html>

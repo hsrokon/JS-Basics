@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Projects</title>
+</head>
+
+<body>
+  <p>YouTube Subscribe  Button</p>
+  <button onclick=" subscribe () " class="js-subscribe-button"> 
+    Subscribe
+  </button>
+
+  <P>Amazon Shipping Calculator</P>
+  <input placeholder="Cost of order" class="js-cost-input" onkeydown="handleCostKeydown();">
+  <button onclick="calculateTotal();">Calculate</button>
+  <p class="js-total-cost"></p>
+
+  <script>
+
+  function handleCostKeydown () {
+    if (event.key === 'Enter') { calculateTotal()}
+  }  
+
+  function calculateTotal() {
+   const inputElement = document.querySelector('.js-cost-input');
+   let cost = Number (inputElement.value); // converting value as string into number using Number
+   if (cost < 40) {
+    cost +=10;
+   }
+
+   document.querySelector('.js-total-cost').innerHTML=`$${cost}`;
+  }
+  
+  function subscribe () {
+    const buttonElement = document.querySelector('.js-subscribe-button');
+  if (buttonElement.innerText === 'Subscribe') {
+    buttonElement.innerHTML ='Subscribed';
+  } else {
+    buttonElement.innerHTML = 'Subscribe';
+  }
+    }
+  </script>
+    <!-- clicks, kewdowns = events
+  onclic, onkeydown = event listeners
+
+  onclick = click
+  onkeydown = key press
+  onscroll = scrolling
+  onmouseenter = hovering over
+  onmouseleave = stop hovering over
+
+
+  Event is an Object
+  .key tells key that we're pressing 
+  event.key = specifies the key we're pressing
+
+  document object represents the webpage
+  window object represents the browser
+  -->
+</body>
+</html>

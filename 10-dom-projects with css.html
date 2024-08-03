@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom ProjectS with CSS </title>
+</head>
+
+<body>
+  <p>YouTube Subscribe  Button</p>
+  <button onclick=" subscribe () " class="js-subscribe-button subscribe-button"> 
+    Subscribe
+  </button>
+
+  <P>Amazon Shipping Calculator</P>
+  <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="handleCostKeydown();">
+  <button onclick="calculateTotal();" class="calculate-button">Calculate</button>
+  <p class="js-total-cost"></p>
+
+
+  <script>
+  function handleCostKeydown () {
+    if (event.key === 'Enter') { calculateTotal()}
+  }  
+
+  function calculateTotal() {
+   const inputElement = document.querySelector('.js-cost-input');
+   let cost = Number (inputElement.value); // converting value as string into number using Number
+   if (cost < 40) {
+    cost +=10;
+   }
+
+   document.querySelector('.js-total-cost').innerHTML=`$${cost}`;
+  }
+  
+  function subscribe () {
+    const buttonElement = document.querySelector('.js-subscribe-button');
+  if (buttonElement.innerText === 'Subscribe') {
+    buttonElement.innerHTML ='Subscribed';
+    buttonElement.classList.add('is-subscribed');//.classList = gives us control of the class attribute
+  } else {
+    buttonElement.innerHTML = 'Subscribe';
+    buttonElement.classList.remove('is-subscribed');
+  }
+    }
+  </script>
+    <!-- clicks, kewdowns = events
+  onclic, onkeydown = event listeners
+
+  onclick = click
+  onkeydown = key press
+  onscroll = scrolling
+  onmouseenter = hovering over
+  onmouseleave = stop hovering over
+
+
+  Event is an Object
+  .key tells key that we're pressing 
+  event.key = specifies the key we're pressing
+
+  document object represents the webpage
+  window object represents the browser
+  -->
+  <style>
+    body { /*body is at the top so we can overrite it later on */
+      font-family: Arial;
+    }
+    .subscribe-button {
+      border: none;
+      background-color: black;
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+    .is-subscribed {
+      background-color: rgb(240, 240, 240);
+      color : black;
+    }
+    .cost-input {
+      font-size: 15px;
+      /*padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;*/
+      padding: 10px;
+    }
+    .calculate-button {
+      background-color: green;
+      color: white;
+      font-size: 15px;
+      padding: 12px 15px; /* first value= top & bottom second value = left & right*/
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <!--
+    .classList is an object
+    .add() = adds a class to an element
+    by doing so we'll add diffrent style with this class
+  -->
+</body>
+</html>

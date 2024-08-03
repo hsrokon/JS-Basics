@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+  </head>
+
+  <body>
+    <h3>Rock Paper Scissors</h3>
+
+    <button onclick="const randomNumber=Math.random();
+
+    let computerMove ='';
+    if (randomNumber >=0 && randomNumber <1/3) {
+       computerMove='rock';
+    } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+       computerMove = 'paper';
+    } else if (randomNumber >= 2/3 && randomNumber < 1) {
+       computerMove = 'scissors';
+    }
+
+
+    let result ='';
+    if (computerMove === 'rock') {
+      result ='Tie';
+    } else if (computerMove === 'paper'){
+      result ='You Loose';
+    } else if (computerMove=== 'scissors'){
+      result='You win';
+    }
+    alert (`You picked rock. Computer picked ${computerMove}. (${result})`)
+    "> 
+    Rock</button>
+
+
+    <button  
+    onclick=" const randomNumber=Math.random ();
+    let computerMove ='';
+    if (randomNumber >=0 && randomNumber<1/3) {
+      computerMove ='rock';
+    } else if ( randomNumber >=1/3 && randomNumber<2/3){
+      computerMove='paper';
+    } else if ( randomNumber>=2/3 && randomNumber <1){
+      computerMove='scissor';
+    }
+
+    let result ='';
+    if (computerMove==='rock'){
+      result='You Win';
+    } else if (computerMove==='paper'){
+      result='Tie';
+    } else if (computerMove==='scissor'){
+      result='You loose';
+    }
+
+    alert(`You picked paper. Computer picked ${computerMove}. (${result})`);
+    "> Paper </button>
+
+
+    <button
+    onclick="
+    const randomNumber = Math.random();
+    let computerMove ='';
+    if (randomNumber>=0 && randomNumber<1/3){
+      computerMove='Rock';
+    } else if (randomNumber>=1/3 && randomNumber<2/3){
+      computerMove='Paper';
+    } else if (randomNumber>=2/3 && randomNumber<1) {
+      computerMove='Scissor'
+    }
+
+    let result='';
+    if (computerMove==='Rock') {
+      result='You loose';
+    } else if (computerMove==='Paper'){
+      result='You win';
+    } else if ( computerMove==='Scissor') {
+      result='Tie';
+    }
+
+    alert(`You picked Scissors. Computer picked ${computerMove}. (${result})`);
+    "> Scissors </button>
+
+      <script>
+        /*
+//Truthy & falsy values
+      if (5){
+        console.log('truthy'); //5 as a truth value causes to show a result
+      }
+      if (0){
+        console.log('truthy'); // 0 as a false value causes the result not to show
+      }
+//Truthy & falsy values can be used as shortcuts
+      const cartQuantity =5;
+      if (cartQuantity){
+        console.log('Cart has products'); // it'll show that cart has products if the value is not 0 or falsy
+      }
+
+      console.log(!0); // not zero results truthy
+
+      console.log('text'/5); // NaN = Not A Number
+
+      let variableOne;
+      console.log(variableOne); // tells that the variable is undefined; This only works with let, const doesn't work
+      */
+//-----------------------Shortcuts of if statements----------------------
+
+        /*
+    if (true) {
+      'truthy'
+    } else {
+      'falsy'
+    }
+    */ 
+//shortcut is (Ternary Operator)
+    true ? 'truthy' : 'falsy'
+
+    const resultCheck = 0 ? 'Truthy' : 'Falsy'; // if result truthy it'll show the result before colon, if falsy after colon
+    console.log(resultCheck);
+    
+    /*
+    if (condition) {
+      console.log('hellow');
+    }
+    */
+// shortcut is (Guard operator)
+    false && console.log('hellow');
+
+    const message = false && 'hellow';
+    console.log(message);
+
+    const message2 = 5 && 'hellow';
+    console.log(message2);
+//Shortcut (Default operator)
+      const currency = 'EUR' || 'USD';
+      console.log(currency);
+
+      const currency2 = undefined || 'USD'; // if one side is undefine it'll show the default value
+      console.log(currency2);
+      </script>
+
+  </body>
+</html>

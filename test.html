@@ -1,0 +1,283 @@
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+<!-- JS uses both double and single Quote -->
+<button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Click Me!</button>
+------------
+<!-- Java Script Where to -->
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+</head>
+<body>
+  <h2>Demo JavaScript in Head</h2> 
+  <p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+------------
+<!-- JS Output -->
+<h2>My First Web Page</h2>
+<p>My First Paragraph.</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+</script>
+------------
+<!--JavaScript Statements -->
+<p>A <b>JavaScript program</b> is a list of <b>statements</b> to be executed by a computer.</p>
+<p id="demo"></p>
+
+<script>
+let x, y, z;  // Statement 1
+x = 5;        // Statement 2
+y = 6;        // Statement 3
+z = x + y;    // Statement 4
+
+document.getElementById("demo").innerHTML =
+"The value of z is " + z + ".";  
+</script>
+------------
+<!--JavaScript const -->
+
+<p>Declaring a constant array does NOT make the elements unchangeable:</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an Array:
+const cars = ["Saab", "Volvo", "BMW"];
+// Change an element:
+cars[0] = "Toyota";
+// Add an element:
+cars.push("Audi");
+
+// Display the Array:
+document.getElementById("demo").innerHTML = cars; 
+//result> Toyota,Volvo,BMW,Audi</script>
+------------
+Operator	Example	Same As
+=	  x = y	  x = y
++=	x += y	x = x + y
+-=	x -= y	x = x - y
+*=	x *= y	x = x * y
+/=	x /= y	x = x / y
+%=	x %= y	x = x % y
+**=	 x**= y 	x = x ** y
+------------
+<h2>JavaScript Objects</h2>
+<p id="demo"></p>
+<script>
+const person = {
+  firstName : "John",
+  lastName  : "Doe",
+  age     : 50,
+  eyeColor  : "blue"
+};
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+//John is 50 years old.</script>
+------------
+<!--An empty string has both a legal value and a type:-->
+<p id="demo"></p>
+<script>
+let car = "";
+
+document.getElementById("demo").innerHTML =
+"The value is: " +
+car + "<br>" +
+"The type is: " + typeof car;
+
+/*The value is:
+The type is: string */</script>
+------------
+<p>Call a function which performs a calculation and returns the result:</p>
+
+<p id="demo"></p>
+<script>
+
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+let result = myFunction(4, 3);
+document.getElementById("demo").innerHTML = result;
+//12</script>
+------------
+<p>Invoke (call) a function that converts from Fahrenheit to Celsius:</p> <p id="demo"></p>
+
+<script>
+function toCelsius(f) {
+  return (5/9) * (f-32);
+}
+
+let value = toCelsius(77);
+document.getElementById("demo").innerHTML = value;
+//25</script>
+<p>Using a function as a variable:</p>
+
+<p id="demo"></p>
+
+<script>
+let text = "The temperature is " + toCelsius(77) + " Celsius.";
+document.getElementById("demo").innerHTML = text;
+
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+//The temperature is 25 Celsius</script>
+------------
+<!--JavaScript For Loop -->
+
+<p id="demo"></p>
+
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+
+let text = "";
+for (let i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+/*BMW
+Volvo
+Saab
+Ford
+Fiat
+Audi*/</script>
+<p id="demo"></p>
+<script>
+let text = "";
+
+for (let i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+/*The number is 0
+The number is 1
+The number is 2
+The number is 3
+The number is 4*/</script>
+------------
+<!--JavaScript For In Loop -->
+<p>The for in statement loops through the properties of an object:</p>
+
+<p id="demo"></p>
+
+<script>
+const person = {fname:"John", lname:"Doe", age:25}; 
+
+let txt = "";
+for (let x in person) {
+  txt += person[x] + " ";
+}
+
+document.getElementById("demo").innerHTML = txt;
+//John Doe 25</script>
+------------
+<h2>The forEach() Method</h2><p>Call a function once for each array element:</p>
+<p id="demo"></p>
+
+<script>
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+
+function myFunction(value, index, array) {
+  txt += value + "<br>"; 
+}
+/*45
+4
+9
+16
+25*/</script>
+------------
+<!--JavaScript For Of Loop -->
+<p>The for of statement loops through the values of any iterable object:</p>
+<p id="demo"></p>
+<script>
+const cars = ["BMW", "Volvo", "Mini"];
+
+let text = "";
+for (let x of cars) {
+  text += x + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+/*BMW
+Volvo
+Mini*/</script>
+<p>The for of statement loops through the values of an iterable object.</p>
+<p id="demo"></p>
+<script>
+let language = "JavaScript";
+
+let text = "";
+for (let x of language) {
+  text += x + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+/*J
+a
+v
+a
+S
+c
+r
+i
+p
+t*/</script>
+------------
+<!-- JavaScript While Loop -->
+<p id="demo"></p>
+<script>
+let text = "";
+let i = 0;
+while (i < 5) {
+  text += "<br>The number is " + i;
+  i++;
+}
+document.getElementById("demo").innerHTML = text;
+/*The number is 0
+The number is 1
+The number is 2
+The number is 3
+The number is 4*/</script>
+<p id="demo"></p>
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+
+let i = 0;
+let text = "";
+for (;cars[i];) {
+  text += cars[i] + "<br>";
+  i++;
+}
+document.getElementById("demo").innerHTML = text;
+/*BMW
+Volvo
+Saab
+Ford*/</script>
+<p id="demo"></p>
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+
+let i = 0;
+let text = "";
+while (cars[i]) {
+  text += cars[i] + "<br>";
+  i++;
+}
+
+document.getElementById("demo").innerHTML = text;
+/*BMW
+Volvo
+Saab
+Ford*/</script>

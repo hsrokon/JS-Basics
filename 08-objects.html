@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title> 
+</head>
+<body>
+
+    <!--
+    Objects makes our code organised
+  -->
+
+  <script>// object groups multiple values together
+
+  const product ={ // ={}; is an object
+    name: 'Socks', //name:, price: - are property separated by comma
+    price: 1090
+  };
+
+  console.log(product);
+  console.log(product.name); // .name - will access the value associated with name property
+  console.log(product.price);
+
+  product.name ='Cotton socks'; // we can change a value inside an object
+  console.log(product);
+
+  product.newProperty=true;
+  console.log(product);
+
+  delete product.newProperty;
+  console.log(product);
+
+  const product1 ={
+    name:'Shirt',
+    color:'White',
+    size:'Large',
+    ['delivery-time']: '10AM'// we can also write 'delivery-time':'10AM', brackets are optional here
+  };
+  console.log(product1);
+  console.log(product1.color);//dot notation
+  console.log(product1['size']);//bracket notation, is used where dot can't be used. for ex.
+  console.log(product1['delivery-time']);//hyphen won't work with dot notation
+  //inside bracket notation we can use Variable- product1[variable1], calculations- product1['delivery' + 'time']
+
+  //objects,functions can be placed inside an object
+  // object, function themselves are values in Java Script
+  const product2 ={
+    name:'Shirt',
+    color:'White',
+    rating: {
+      stars : 4.5,//nested objects
+      count : 87
+    }, 
+    fun: function (){
+      console.log('function inside object');
+    }
+  };
+  console.log(product2.rating.stars);//console is an object,log()is a function - Math.random() are objects and function[console.log(),Math.random() are built in objects with the language]
+  product2.fun();
+  console.log(typeof console);//object
+  console.log(typeof console.log);//function
+
+//Built in Objects [JSON(Java Script Object Notation),LocalStorage]
+
+  //JSON is a syntax with less features(don'tsupport function)/ JSON IS UNIVERSAL
+  console.log( JSON.stringify(product2));//Converted to JSON string - this now could be sent to another computer or can be
+  const jsonString = JSON.stringify(product2);
+  console.log(JSON.parse(jsonString));//Converting back to JS object
+
+
+  //Null vs Undefined
+  //Null= intentionally left something empty
+  function func(parameter='default'){
+    console.log(parameter);
+  }
+  func();   //=> default
+  func(undefined);  //=> default
+
+  func(null)     //=> null
+
+  //Auto-boxing
+  console.log('hellow'.length); // strings can aslo have properties
+                                //.length tells us how many characters/letters are in this string
+  console.log('hellow'.toUpperCase());//strings can also have methods
+  
+  //Objects are references
+  // Copy by references
+  const object1 ={ // eventhough we're using const we can still change value using references!
+    message: 'helow'
+  };
+  const object2 = object1;
+
+  object1.message = 'Good Job';
+  console.log(object1);
+  console.log(object2);
+ 
+  //Can't compare object directly
+  const object3 = {
+    message:'Good Job'
+  };
+  console.log(object3===object1);// object3 and object1 are diffrent references
+  console.log(object2===object1);// same references
+
+  // SHORTCUTS FOR OBJECTS
+  const object4 = {
+    message:'Good Job',
+    price: 799
+  };
+  //const message = object4.message;
+  const {message, price} = object4;//if the variable and property names are same
+  //Destructuring Shortcut- easier way to take properties out of an object 
+
+  console.log(message);
+  console.log(price);
+
+  //Shorthand property-------------------------
+  const object5 ={
+    // message : message
+    message,
+    // Shorthand Method------------------------
+    /*method : function function1 (){
+    console.log('ok');
+    }*/
+    method (){
+      console.log('ok')
+    }
+  };  
+  console.log(object5);
+  object5.method();
+  // Method is a function saved inside of an object
+  </script>
+  
+</body>
+</html>

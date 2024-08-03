@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom</title>
+</head>
+
+<body>
+  <!--DOM = Document Object Model
+DOM is an another built-in object like console, Math, JSON, localStorage 
+- DOM combines Java Script and Html together
+-->
+
+  <button>hellow</button>
+  <button class="js-button"> Second button</button> <!-- js-button name is used to declare it's a button going to be used in JS -->
+
+  <script>
+
+   /* console.log(document.title);
+    document.title='Changed';
+
+    console.log(document.body);
+    console.log(typeof document.body);
+
+    console.log (document.body.innerHTML);
+    document.body.innerHTML ='<button>Body changed to this button</button>';
+    */
+
+    /* Query Selector
+    - lets us get any element from the page and put it inside JS 
+    - When a HTML object is inside of JS, it is an object*/
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('button').innerHTML ='Changed';
+
+    const buttonElement = document.querySelector('.js-button');// we used buttonElement name to say it's an HTML element
+    //.js-button here "." is class selector 
+    console.log(buttonElement);
+
+  </script>
+
+</body>
+</html>
