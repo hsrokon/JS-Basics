@@ -6,6 +6,33 @@
   <title>Document</title>
 </head>
 <body>
+
+  <p>Cart Quantity</p>
+
+  <button onclick="
+    console.log(cartQuantity)">
+      Show Quantity
+  </button>
+  <button onclick="
+    cartQuantity++;
+    console.log(cartQuantity)">
+      Add to cart
+  </button>
+  <button onclick="
+    cartQuantity+=2;
+    console.log(cartQuantity)">
+    +2
+  </button>
+  <button onclick="
+    cartQuantity+=3;
+    console.log(cartQuantity)">
+      +3
+  </button>
+  <button onclick="
+    cartQuantity=0;
+    console.log(cartQuantity)">
+      Reset Cart
+  </button>
   
   <script>
     let name ='Rokon';
@@ -13,6 +40,8 @@
     console.log(name+' ' +age);
     age = 24;
     console.log(name+' ' +age);
+
+    let cartQuantity =0;
   </script>
   
 </body>
